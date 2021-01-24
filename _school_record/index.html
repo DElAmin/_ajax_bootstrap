@@ -9,7 +9,7 @@
     <script src="js/bootstrap.js"></script>
     <script>
         function ajax_request(){
-            alert("It's OK");
+            //alert("It's OK");
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function(){
                 if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
@@ -27,7 +27,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="ajax_request();">
     <!-- <div class="jumbotron"></div> -->
     <div class="container">
         <div class="jumbotron">
@@ -61,7 +61,6 @@
                 </div>
             </div>
         </div>
-        <div id="test"></div>
         <table class="table table-striped">
             <thead >
                 <tr class="success">
@@ -72,37 +71,8 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>DElAmin</td>
-                    <td>Computer</td>
-                    <td>500</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-primary" data-toggle="dropdown">Actions <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Edit</a></li>
-                                <li><a href="#">Delete</a></li>
-                            </ul>    
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Abdou</td>
-                    <td>Psychology</td>
-                    <td>1000</td>
-                    <td>
-                        <div class="dropdown">
-                            <button class="btn btn-primary" data-toggle="dropdown">Actions <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Edit</a></li>
-                                <li><a href="#">Delete</a></li>
-                            </ul>    
-                        </div>
-                    </td>
-                </tr>
+            <tbody id="test">
+                
             </tbody>
         </table>
     </div>   
