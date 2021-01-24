@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Ajax</title>
+    <script>
+        //alert('Hello from th script Tag');
+        function ajax_request(get_val) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+                if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                    var result = document.getElementById('result');
+                    result.innerHTML = xmlhttp.responseText;    
+                }
+            }
+            //xmlhttp.open('GET', 'data.php', true);
+            xmlhttp.open('GET', 'data.php?var1='+get_val, true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <button onclick="ajax_request();">Click me</button>
+    <!-- <input type="text" onkeypress="ajax_request(this.value);"> -->
+    <input type="text" onkeyup="ajax_request(this.value);">
+    <div id="result"></div>
+</body>
+</html>
