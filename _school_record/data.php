@@ -9,8 +9,8 @@
         $run_sql = mysqli_query($connection, $ins_sql);
     }
        
-        $del_sql = "DELETE FROM student_data WHERE id ='$id'";
-        $run_sql = mysqli_query($connection, $del_sql);
+        //$del_sql = "DELETE FROM student_data WHERE id ='$id'";
+        //$run_sql = mysqli_query($connection, $del_sql);
         
 
     $sql = "SELECT * FROM student_data";
