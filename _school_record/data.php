@@ -1,5 +1,15 @@
 <?php
     include_once 'db.php';
+    if (!($_REQUEST['student_name'] == '' || $_REQUEST['student_subject'] == '' || $_REQUEST['student_fee'] == '')) {
+        $student_name = $_REQUEST['student_name'];
+        $student_subject = $_REQUEST['student_subject'];
+        $student_fee = $_REQUEST['student_fee'];
+
+        $ins_sql = "INSERT INTO student_data (student_name, student_subject, student_fee) VALUES ('$student_name', '$student_subject', '$student_fee')";
+        $run_sql = mysqli_query($connection, $ins_sql);
+    }
+    
+
     $sql = "SELECT * FROM student_data";
     $run = mysqli_query($connection, $sql);
     while ($rows = mysqli_fetch_assoc($run)){?>
