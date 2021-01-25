@@ -8,7 +8,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script>
-        function ajax_request(){
+        function ajax_request(req, id){
             //alert("It's OK");
             var student_name = document.getElementById('student_name').value;
             var student_subject = document.getElementById('student_subject').value;
@@ -62,7 +62,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-8 col-md-offset-2">
-                    <button class="btn btn-danger btn-block" onclick="ajax_request('add_new_record');">Add New Record</button>
+                    <button class="btn btn-danger btn-block" onclick="ajax_request('add_new_record', id);">Add New Record</button>
                 </div>
             </div>
         </div>

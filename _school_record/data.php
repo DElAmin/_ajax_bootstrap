@@ -8,7 +8,10 @@
         $ins_sql = "INSERT INTO student_data (student_name, student_subject, student_fee) VALUES ('$student_name', '$student_subject', '$student_fee')";
         $run_sql = mysqli_query($connection, $ins_sql);
     }
-    
+       
+        $del_sql = "DELETE FROM student_data WHERE id ='$id'";
+        $run_sql = mysqli_query($connection, $del_sql);
+        
 
     $sql = "SELECT * FROM student_data";
     $run = mysqli_query($connection, $sql);
@@ -21,9 +24,10 @@
             <td>
                 <div class="dropdown">
                     <button class="btn btn-primary" data-toggle="dropdown">Actions <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Edit</a></li>
-                        <li><a href="#">Delete</a></li>
+                    <!-- <ul class="dropdown-menu"> -->
+                    <ul class="">
+                        <li><a href="javascript:void(0);" >Edit</a></li>
+                        <li><a href="javascript:void(0);" onclick="ajax_request('delete_record',<?php echo $rows['id'];?>)";>Delete</a></li>
                     </ul>    
                 </div>
             </td>
@@ -31,33 +35,5 @@
 <?php        
     }
 ?>
-<tr>
-    <td>1</td>
-    <td>DElAmin</td>
-    <td>Computer</td>
-    <td>500</td>
-    <td>
-        <div class="dropdown">
-            <button class="btn btn-primary" data-toggle="dropdown">Actions <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Edit</a></li>
-                <li><a href="#">Delete</a></li>
-            </ul>    
-        </div>
-    </td>
-</tr>
-<tr>
-    <td>2</td>
-    <td>Abdou</td>
-    <td>Psychology</td>
-    <td>1000</td>
-    <td>
-        <div class="dropdown">
-            <button class="btn btn-primary" data-toggle="dropdown">Actions <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Edit</a></li>
-                <li><a href="#">Delete</a></li>
-            </ul>    
-        </div>
-    </td>
-</tr>
+
+
